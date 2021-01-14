@@ -1,19 +1,42 @@
 filetype on
-
 syntax on
 set colorcolumn=80
 highlight ColorColumn ctermbg=0 guibg=lightgrey
 set t_Co=256
 colorscheme onehalfdark
 let g:airline_theme='onehalfdark'
+set t_ut=""
 
-set noerrorbells
+" Mode Settings
+
+let &t_SI.="\e[5 q" "SI = INSERT mode
+let &t_SR.="\e[4 q" "SR = REPLACE mode
+let &t_EI.="\e[1 q" "EI = NORMAL mode (ELSE)
+
+"Cursor settings:
+"
+"  1 -> blinking block
+"  2 -> solid block 
+"  3 -> blinking underscore
+"  4 -> solid underscore
+"  5 -> blinking vertical bar
+"  6 -> solid vertical bar
+
+set nocompatible
+
+call plug#begin()
+
+Plug 'sheerun/vim-polyglot'
+
+call plug#end()
+
+set noerrorbells visualbell t_vb=
 set tabstop=4 softtabstop=4
 set shiftwidth=4
 set expandtab
 set smartindent
-set nu
-set nowrap
+set nu rnu
+"set nowrap
 set smartcase
 set noswapfile
 set nobackup
