@@ -27,12 +27,13 @@ set nocompatible
 call plug#begin()
 
 Plug 'sheerun/vim-polyglot'
+Plug 'wikitopian/hardmode'
 
 call plug#end()
 
 set noerrorbells visualbell t_vb=
 set tabstop=4 softtabstop=4
-set shiftwidth=4
+set shiftwidth=34
 set expandtab
 set smartindent
 set nu rnu
@@ -43,17 +44,12 @@ set nobackup
 set undodir=~/.vim/undodir
 set undofile
 set clipboard=unnamed
+autocmd VimEnter,BufNewFile,BufReadPost * silent! call HardMode()
 
 autocmd InsertEnter * set cul 
 autocmd InsertLeave * set nocul 
 
 imap ii <Esc>
-
-" reemove newbie crutches in Command Mode
-cnoremap <Down> <Nop>
-cnoremap <Left> <Nop>
-cnoremap <Right> <Nop>
-cnoremap <Up> <Nop>
 
 " Remove newbie crutches in Insert Mode
 " iinoremap <Down> <Nop>
@@ -65,12 +61,11 @@ cnoremap <Up> <Nop>
 " iinoremap <C-k> <Up>
 " iinoremap <C-l> <Right>
 
-
-" Remove newbie crutches in Normal Mode
-nnoremap <Down> <Nop>
-nnoremap <Left> <Nop>
-nnoremap <Right> <Nop>
-nnoremap <Up> <Nop>
+" reemove newbie crutches in Command Mode
+cnoremap <Down> <Nop>
+cnoremap <Left> <Nop>
+cnoremap <Right> <Nop>
+cnoremap <Up> <Nop>
 
 " Remove newbie crutches in Visual Mode
 vnoremap <Down> <Nop>
@@ -78,4 +73,9 @@ vnoremap <Left> <Nop>
 vnoremap <Right> <Nop>
 vnoremap <Up> <Nop>
 
+" Remove newbie crutches in Normal Mode
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
+nnoremap <Up> <Nop>
 
